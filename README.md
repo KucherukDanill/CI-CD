@@ -7,7 +7,12 @@
 ![изображение](https://github.com/user-attachments/assets/7a30da26-ee2c-46e8-84d2-bfc2e0597f53)
 
 
-## Лог 
+
+![изображение](https://github.com/user-attachments/assets/cc27daaf-561a-4d86-a6cf-05f93b730563)
+
+
+![изображение](https://github.com/user-attachments/assets/dd8ef4a5-ee0b-4d60-813f-38ce9bcfb2db)
+
 
 
 
