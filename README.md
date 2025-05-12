@@ -1,9 +1,10 @@
 # CI/CD Pipeline для Nginx приложения
 
-Этот проект содержит CI/CD пайплайна для сборки и доставки Nginx приложения с использованием Docker и Docker Compose.
+Этот проект содержит CI/CD пайплайна для сборки и доставки Nginx приложения с использованием GitHub Actions.
 
 ## Результат 
 
+![изображение](https://github.com/user-attachments/assets/7a30da26-ee2c-46e8-84d2-bfc2e0597f53)
 
 
 ## Лог 
