@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 env:
-  DOCKER_IMAGE: nginx-server 
+  DOCKER_IMAGE: nginx-server
 
 jobs:
   build:
@@ -39,7 +39,8 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          IMAGE_FULL_NAME=${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.DOCKER_IMAGE }}
+          IMAGE_FULL_NAME="${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.DOCKER_IMAGE }}"
+          echo "Building image: $IMAGE_FULL_NAME:${{ env.VERSION }}"
           docker build -t $IMAGE_FULL_NAME:${{ env.VERSION }} -t $IMAGE_FULL_NAME:latest .
           docker push $IMAGE_FULL_NAME:${{ env.VERSION }}
           docker push $IMAGE_FULL_NAME:latest
