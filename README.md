@@ -14,8 +14,6 @@ CD:
 ![изображение](https://github.com/user-attachments/assets/dd8ef4a5-ee0b-4d60-813f-38ce9bcfb2db)
 
 
-Полный лог (многа букав) в 
-
 
 ## CI/CD Пайплайн
 
