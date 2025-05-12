@@ -39,24 +39,20 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          # Set variables with proper quoting
-          DOCKER_USERNAME="${{ secrets.DOCKER_HUB_USERNAME }}"
-          DOCKER_IMAGE="${{ env.DOCKER_IMAGE }}"
-          VERSION="${{ env.VERSION }}"
+          DOCKER_USERNAME=${{ secrets.DOCKER_HUB_USERNAME }}
+          DOCKER_IMAGE=${{ env.DOCKER_IMAGE }}
+          VERSION=${{ env.VERSION }}
           
-          # Build full image name
-          IMAGE_FULL_NAME="$DOCKER_USERNAME/$DOCKER_IMAGE"
+          IMAGE_FULL_NAME=${DOCKER_USERNAME}/${DOCKER_IMAGE}
           
-          echo "Building image: $IMAGE_FULL_NAME:$VERSION"
+          echo "Собираем образ: ${IMAGE_FULL_NAME}:${VERSION}"
           
-          # Build and tag the image
-          docker build -t "$IMAGE_FULL_NAME:$VERSION" -t "$IMAGE_FULL_NAME:latest" .
+          docker build -t "${IMAGE_FULL_NAME}:${VERSION}" -t "${IMAGE_FULL_NAME}:latest" .
           
-          # Push the images
-          docker push "$IMAGE_FULL_NAME:$VERSION"
-          docker push "$IMAGE_FULL_NAME:latest"
+          docker push "${IMAGE_FULL_NAME}:${VERSION}"
+          docker push "${IMAGE_FULL_NAME}:latest"
           
-          echo "DEPLOY_VERSION=$IMAGE_FULL_NAME:$VERSION" >> $GITHUB_ENV
+          echo "DEPLOY_VERSION=${IMAGE_FULL_NAME}:${VERSION}" >> $GITHUB_ENV
 
   deploy:
     name: CD - Deploy Application
